@@ -1,0 +1,1 @@
+# smart-study is online study for competitive exams and also provides module for time management and scheduling for students. For better review it provides different charts and views for results in percentile method.
