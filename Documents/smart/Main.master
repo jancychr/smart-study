@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Main" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Smart Study</title>
+    <link href="Styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="Styles/animate.css" rel="stylesheet" />
+    <link href="Styles/flexslider.css" rel="stylesheet" />
+    <link href="Styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="Styles/owl.carousel.css" rel="stylesheet" />
+    <link href="Styles/owl.theme.css" rel="stylesheet" />
+    <link href="Styles/venobox.css" rel="stylesheet" />
+    <link href="Styles/style.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet'
+        type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css' />
+    <link href='http://fonts.googleapis.com/css?family=Allura' rel='stylesheet' type='text/css' />
+    <!--[if lt IE 9]>
+               <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+               <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+               <![endif]-->
+    <script type="text/javascript" src="Scripts/jquery.min.js"></script>
+    <script type="text/javascript" src="Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="Scripts/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        var UserId = "<%= UserId%>";
+
+        $(document).ready(function () {
+            if (UserId != 0) {
+                $("ul#top-nav li.ulogin").hide();
+                $("ul#top-nav li.usignup").hide();
+
+                $("ul#top-nav li.udashboard").show();
+                $("ul#top-nav li.ulogout").show();
+            } else {
+
+                $("ul#top-nav li.ulogin").show();
+                $("ul#top-nav li.usignup").show();
+
+                $("ul#top-nav li.udashboard").hide();
+                $("ul#top-nav li.ulogout").hide();
+            }
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container-full">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span
+                            class="icon-bar"></span><span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Default.aspx">
+                        <img src="Images/logo.png" alt="Smart Study" width="150px" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav" id="top-nav">
+                        <li><a href="Default.aspx">Home</a></li>
+                        <li><a href="AboutUs.aspx">About Us</a></li>
+                        <li><a href="ContactUs.aspx">Contact Us</a></li>
+                        <li><a href="FAQ.aspx">FAQ</a></li>
+                        <li class="usignup"><a href="Registration.aspx">Sign Up</a></li>
+                        <li class="ulogin"><a href="Login.aspx">Login</a></li>
+                        <li class="udashboard"><a href="Dashboard.aspx">Dashboard</a></li>
+                        <li class="ulogout">
+                            <asp:LinkButton ID="lnkbtnLogout" runat="server" OnClick="lnkbtnLogout_Click">Logout</asp:LinkButton></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+    </asp:ContentPlaceHolder>
+    <section id="service" class="space" style="margin-top: 0px">
+        <div class="container">
+        <div class="row">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        </div>
+    </section>
+    <footer id="footer">
+    <section class="md-footer">
+   <div class="container">
+   <div class="row">
+        <div class="col-sm-3 col-xs-12"> <h4>Address</h4> 
+            <address>127, Siddhi Vinayak Complex,<br/>Behind Railway Station, <br/>Alkapuri-390 005, Vadodara. <br/><br/>Phone : +91 0265 6599822<br /><br />Email: <a href="mailto:info@mytestbuddy.com">info@mytestbuddy.com</a><br />Email: <a href="mailto:smartstudy@mytestbuddy.net">smartstudy@mytestbuddy.net</a> </address>
+        </div>
+    <div class="col-md-3 col-xs-6">
+    <h4>About us</h4>
+        <ul class="list-unstyled links">
+            <li> <a href="AboutUs.aspx">About us</a> </li>
+            <li> <a href="PrivacyPolicy.aspx">Privacy Policy</a> </li>
+            <li> <a href="TermsandConditions.aspx">Terms & Conditions</a> </li>
+        </ul>
+    </div>
+    <div class="col-md-3 col-xs-6"> <h4>Services</h4>
+        <ul class="list-unstyled links">
+            <li> <a target="_blank" href="http://www.mytestbuddy.com/Online-NEET-UG-TEST-Series">NEET UG</a> </li>
+            <li> <a target="_blank" href="http://www.mytestbuddy.com/Online-NEET-PG-TEST-Series">NEET PG</a> </li>
+            <li> <a target="_blank" href="http://www.mytestbuddy.com/Online-JEE-TEST-Series">JEE (MAINS)</a> </li>
+            <li> <a target="_blank" href="http://www.mytestbuddy.com/Online-CSAT-TEST-Series">CSAT</a> </li>
+            <li> <a target="_blank" href="http://www.mytestbuddy.com/Online-GMAT-TEST-Series">GMAT</a> </li>
+            <li> <a target="_blank" href="http://www.mytestbuddy.com/Online-GRE-TEST-Series">GRE</a> </li>
+            <li> <a target="_blank" href="http://www.mytestbuddy.com/Online-IBPS-TEST-Series">IBPS</a> </li>
+            <li> <a target="_blank" href="http://www.mytestbuddy.com/Online-CAT-TEST-Series">IIM-CAT</a> </li>
+        </ul>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section class="btm-footer">
+                     <div class="container">
+                        <div class="row">
+                           <div class="col-sm-8 col-xs-12">
+                              Copyright @2014 Mytestbuddy
+                           </div>
+                           <!-- .col 8 -->
+                           <div class="col-sm-4 hidden-xs">
+                              <ul class="socials list-unstyled pull-right">
+                                 <li>
+                                    <a href="http://www.facebook.com/SmartStudy" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+                                    <img src="Images/facebook.png" width="35px" height="35px" />
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </section>
+    </footer>
+    <script type="text/javascript" src="Scripts/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="Scripts/pace.min.js"></script>
+    <script type="text/javascript" src="Scripts/smoothscroll.js"></script>
+    <script type="text/javascript" src="Scripts/isotope.min.js"></script>
+    <script type="text/javascript" src="Scripts/venobox.min.js"></script>
+    <script type="text/javascript" src="Scripts/softr.js"></script>
+    </form>
+</body>
+</html>

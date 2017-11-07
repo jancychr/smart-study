@@ -1,0 +1,37 @@
+﻿.mGrid
+{
+    background-color: #fff;
+    border: solid 1px #525252;
+    border-collapse: collapse;
+}
+.mGrid td
+{
+    padding: 5px;
+    border: solid 1px #c1c1c1;
+    color: #717171;
+}
+.mGrid th
+{
+    padding: 7px 3px;
+    color: #fff;
+    background: #424242 url(../images/grd_head.png) repeat-x top;
+    border-left: solid 1px #525252;
+    font-size: 13px;
+}
+.mGrid tr:hover
+{
+    background-color: lightyellow;
+}
+.mGrid .alt
+{
+    background: #fcfcfc url(../images/grd_alt.png) repeat-x top;
+}
+.mGrid a
+{
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.mGrid a:hover
+{
+    text-decoration: underline;
+}
